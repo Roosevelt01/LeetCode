@@ -45,12 +45,10 @@ public class Sums {
 package Suma_de_dos;
 
 import java.util.HashMap;
-import java.util.Arrays; // Solo lo usamos en el main para imprimir el arreglo bonito
+import java.util.Arrays;
 
 public class Sums {
 
-    // 🧠 1. TU MOTOR DE INGENIERÍA (La "Caja Negra")
-    // Este es el método exacto que copiarías y pegarías en LeetCode
     public static int[] encontrarDosSumas(int[] num, int objetivo) {
         HashMap<Integer, Integer> numerosVistos = new HashMap<>();
 
@@ -61,30 +59,12 @@ public class Sums {
             if(numerosVistos.containsKey(complemento)){
                 int indiceDelComplemento = numerosVistos.get(complemento);
                 
-                // 🔥 EL CAMBIO CLAVE: En vez de imprimir (println), DEVOLVEMOS el arreglo.
-                // Y al hacer "return", el bucle y el método se detienen automáticamente (ya no hace falta el "break").
                 return new int[] { indiceDelComplemento, i }; 
             }
 
             numerosVistos.put(numeroActual, i);
         }
         
-        // 🛡️ PROGRAMACIÓN DEFENSIVA: ¿Qué pasa si le pasas un arreglo sin solución?
-        // Un ingeniero nunca deja que el método termine en el aire. Lanza una excepción controlada.
         throw new IllegalArgumentException("No se encontró ninguna pareja que sume el objetivo.");
-    }
-
-
-    // 🏎️ 2. TU PISTA DE PRUEBAS (El cliente que usa tu motor)
-    public static void main(String[] args) {
-        // Preparamos los datos
-        int[] num = {2, 7, 11, 15};
-        int objetivo = 9;
-        
-        // Llamamos a tu método y guardamos lo que nos devuelve en una variable
-        int[] resultado = encontrarDosSumas(num, objetivo);
-        
-        // Imprimimos el resultado para confirmar la victoria
-        System.out.println("¡Reto superado! Índices: " + Arrays.toString(resultado));
     }
 }
