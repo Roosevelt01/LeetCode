@@ -18,7 +18,6 @@ public class Main {
             char leftChar = Character.toLowerCase(s.charAt(left));
             char rightChar = Character.toLowerCase(s.charAt(right));
 
-
             if(leftChar != rightChar){
                 return false;
             }
@@ -30,7 +29,6 @@ public class Main {
 
         return true;
     }
-
 
     public static void main(String[] args) {
         Main programa = new Main();
