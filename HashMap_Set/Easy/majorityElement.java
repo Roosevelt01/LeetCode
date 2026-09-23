@@ -7,7 +7,6 @@ public class Solution {
     public int majorityElement(int[] nums) {
         Map<Integer, Integer> elements = new HashMap<>();
 
-        //P
         for (int num : nums) {
             elements.put(num, elements.getOrDefault(num, 0) + 1);
         }
